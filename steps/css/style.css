@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'PingHei Light';
+    font-style: normal;
+    font-weight: 200;
+    src: local('☺︎'), url('../../fonts/PingHei-light.woff') format("woff"), url('../../fonts/PingHei-light.ttf') format("truetype");
+    /* Copyright (c) 2000-2008, Changzhou SinoType Technology Co., Ltd.  All rights reserved. */
+}
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: 'PingHei Light',"Open Sans", serif;
+  color: #71495b;
+  background-color: #3e253c;
+}
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+html, body {
+  height: 100%;
+}
+
+@media only screen and (min-width: 1170px) {
+  body.new-color-1::before {
+    background-color: #c06c69;
+  }
+
+  body.new-color-2::before {
+    background-color: #bf69c0;
+  }
+
+  body.new-color-3::before {
+    background-color: #699ec0;
+  }
+}
+body::before, body::after {
+  /* the 2 underneath colored sections */
+  content: '';
+  position: fixed;
+  /* trick to remove some annoying flickering on webkit browsers */
+  width: 89.8%;
+  max-width: 1170px;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 50%;
+  z-index: -1;
+}
+
+body::before {
+  top: 0;
+  background-color: #f4bd89;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+body::after {
+  top: 50%;
+  background-color: #71495b;
+}
+
+header {
+  position: relative;
+  height: 50%;
+  background-color: #3e253c;
+  z-index: 2;
+}
+header h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 90%;
+  max-width: 1170px;
+  text-align: center;
+  color: #aac1d0;
+  font-size: 60px;
+  font-size: 3.5rem;
+}
+
+.cd-step {
+  position: relative;
+  z-index: 2;
+  min-height: 50px;
+  margin-left: 56px;
+  background-color: #3e253c;
+  padding: 1em 1em 4em;
+}
+.cd-step::before, .cd-step::after {
+  content: '';
+  position: absolute;
+  width: 56px;
+  right: 100%;
+  z-index: 2;
+}
+.cd-step::before {
+  top: 0;
+  height: 50px;
+  background-repeat: no-repeat;
+}
+.cd-step::after {
+  top: 50px;
+  bottom: 0;
+  background-image: url("../img/cd-pattern-small.svg");
+  background-repeat: repeat-y;
+}
+.cd-step.cd-step-divider::after {
+  top: 0;
+}
+.cd-step.cd-step-divider:last-child {
+  display: none;
+}
+.cd-step.cd-step-1::before {
+  background-image: url("../img/cd-icon-1-small.svg");
+}
+.cd-step.cd-step-2::before {
+  background-image: url("../img/cd-icon-4-small.svg");
+}
+.cd-step.cd-step-3::before {
+  background-image: url("../img/cd-icon-2-small.svg");
+}
+.cd-step.cd-step-4::before {
+  background-image: url("../img/cd-icon-3-small.svg");
+}
+.cd-step h2 {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1em;
+  font-family: 'PingHei Light', "Merriweather Sans", sans-serif;
+  font-size: 26px;
+}
+.cd-step p {
+  font-size: 22px;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.5);
+}
+.cd-step a {
+    color: #5c9a9a;
+}
+@media only screen and (min-width: 1170px) {
+  .cd-step {
+    min-height: 525px;
+    margin-left: 420px;
+    padding: 6em 2em;
+  }
+  .cd-step::before, .cd-step::after {
+    width: 420px;
+  }
+  .cd-step::before {
+    height: 325px;
+  }
+  .cd-step::after {
+    top: 325px;
+    background-image: url("../img/cd-pattern-large.svg");
+  }
+  .cd-step.cd-step-divider:first-child, .cd-step.cd-step-divider:last-child {
+    min-height: 50px;
+    padding: 0;
+  }
+  .cd-step.cd-step-divider:last-child {
+    display: block;
+  }
+  .cd-step.cd-step-1::before {
+    background-image: url("../img/cd-icon-1-large.svg");
+  }
+  .cd-step.cd-step-2::before {
+    background-image: url("../img/cd-icon-4-large.svg");
+  }
+  .cd-step.cd-step-3::before {
+    background-image: url("../img/cd-icon-2-large.svg");
+  }
+  .cd-step.cd-step-4::before {
+    background-image: url("../img/cd-icon-3-large.svg");
+  }
+  .cd-step h2, .cd-step p {
+    color: #71495b;
+    -webkit-transition: color, 0.5s;
+    -moz-transition: color, 0.5s;
+    transition: color, 0.5s;
+  }
+  .cd-step h2 {
+    font-size: 35px;
+    font-size: 2rem;
+  }
+  .cd-step p {
+    font-size: 20px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+  .cd-step.focus h2 {
+    color: white;
+  }
+  .cd-step.focus p {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+footer {
+  position: relative;
+  height: 50%;
+  background: #3e253c;
+  z-index: 2;
+}
