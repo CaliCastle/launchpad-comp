@@ -16,3 +16,4 @@ cp db.inc.example.php db.inc.php
 - Open `db.inc.example.php` in your editor and copy everything
 - Create a new file in the root directory called `db.inc.php` and paste what you just copied into it
 - Change the pre-defined settings accordingly and you're good to go!
+
